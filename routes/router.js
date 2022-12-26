@@ -5,7 +5,7 @@ const router=express.Router();
 router.get("/",(req,res)=>{
     console.log("connect");
 });
-router.post("register",async(req,res)=>{
+router.post("/register",async(req,res)=>{
     //console.log(req.body);
     const {name,email,age,mobile,work,address,des}=req.body;
     if(!name || !email || !age || !mobile || !work || !address || !des){
