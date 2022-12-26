@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import { NavLink } from 'react-router-dom';
+import Config from '../config.js';
 const Register=()=>{
     const [input,setInput]=useState({
         name:"",
@@ -24,7 +25,7 @@ const Register=()=>{
     const addInputData=async(e)=>{
         e.preventDefault();
         const {name,email,age,mobile,work,address,des}=input;
-        const res=await fetch("/register",{
+        const res=await fetch(Config.registerURL,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
